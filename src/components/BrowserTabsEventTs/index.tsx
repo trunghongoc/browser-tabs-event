@@ -16,12 +16,16 @@ enum KEYS {
   STORAGE_BTE_TAB_ID_LASTEST = 'STORAGE_BTE_TAB_ID_LASTEST'
 }
 
-export const BrowserTabsEventTs: FC<IProps> = ({
+export const BrowserTabsEvent: FC<IProps> = ({
   handleOnFirstTimeLoadApp = (
     tabId?: string,
     isFirstTime?: boolean
   ): void => {},
-  handleOnFirstTimeLoadTab = (tabId?: string, isFirstTime?: boolean): void => {}
+  handleOnFirstTimeLoadTab = (
+    tabId?: string,
+    isFirstTime?: boolean
+  ): void => {},
+  handleOnUnMountTab = (tabId?: string): void => {}
 }: IProps): JSX.Element => {
   const [currentTabKey, setCurrentTabKey] = useState<string>('')
 
@@ -112,6 +116,7 @@ export const BrowserTabsEventTs: FC<IProps> = ({
 
   const handleOnUnMount: any = (initialTabKey: string): void => {
     removeKeyFromList(initialTabKey)
+    handleOnUnMountTab(initialTabKey)
 
     BROADCAST_CHANNEL.postMessage({
       type: BROADCAST_CHANNEL_TYPES.CLOSED_TAB,
@@ -131,7 +136,6 @@ export const BrowserTabsEventTs: FC<IProps> = ({
 
     appendKeyToList(initialTabKey)
 
-    window.addEventListener('unload', () => handleOnUnMount(initialTabKey))
     BROADCAST_CHANNEL.onmessage = handleOnReceivedBroadcastMessage
     return () => handleOnUnMount(initialTabKey)
   }, []) // eslint-disable-line react-hooks/exhaustive-deps

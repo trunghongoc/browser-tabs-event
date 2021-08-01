@@ -8,6 +8,7 @@ export interface IProps {
   // first time load app, or after close all tabs
   handleOnFirstTimeLoadApp?: any
   handleOnFirstTimeLoadTab?: any
+  handleOnUnMountTab?: any
 }
 
 export interface IBroadcastMessageData {

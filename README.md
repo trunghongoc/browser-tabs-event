@@ -23,11 +23,15 @@ const App: FC = (): JSX.Element => {
     isFirstTimeLoadTab: boolean
   ): void => {}
 
+  // handle on unmount tab
+  const handleOnUnMountTab = (tabId: string): void => {}
+
   // ...
   return (
     <BrowserTabsEvent
       handleOnFirstTimeLoadApp={handleOnFirstTimeLoadApp}
       handleOnFirstTimeLoadTab={handleOnFirstTimeLoadTab}
+      handleOnUnMountTab={handleOnUnMountTab}
     />
   )
 }
@@ -45,11 +49,15 @@ const App = () => {
   // first time load tab
   const handleOnFirstTimeLoadTab = (tabId, isFirstTimeLoadTab) => {}
 
+  // handle on unmount tab
+  const handleOnUnMountTab = tabId => {}
+
   // ...
   return (
     <BrowserTabsEvent
       handleOnFirstTimeLoadApp={handleOnFirstTimeLoadApp}
       handleOnFirstTimeLoadTab={handleOnFirstTimeLoadTab}
+      handleOnUnMountTab={handleOnUnMountTab}
     />
   )
 }

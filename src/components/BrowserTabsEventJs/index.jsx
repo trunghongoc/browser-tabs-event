@@ -11,9 +11,10 @@ const KEYS = {
   STORAGE_BTE_TAB_ID_LASTEST: 'STORAGE_BTE_TAB_ID_LASTEST'
 }
 
-export const BrowserTabsEventJs = ({
+export const BrowserTabsEvent = ({
   handleOnFirstTimeLoadApp = (tabId, isFirstTime) => {},
-  handleOnFirstTimeLoadTab = (tabId, isFirstTime) => {}
+  handleOnFirstTimeLoadTab = (tabId, isFirstTime) => {},
+  handleOnUnMountTab = tabId => {}
 }) => {
   const [currentTabKey, setCurrentTabKey] = useState('')
 
@@ -94,6 +95,7 @@ export const BrowserTabsEventJs = ({
 
   const handleOnUnMount = initialTabKey => {
     removeKeyFromList(initialTabKey)
+    handleOnUnMountTab(initialTabKey)
 
     BROADCAST_CHANNEL.postMessage({
       type: BROADCAST_CHANNEL_TYPES.CLOSED_TAB,
