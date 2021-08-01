@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC, useState } from 'react'
+import { BrowserTabsEvent } from './components/BrowserTabsEvent'
 
-function App() {
+const App: FC = (): JSX.Element => {
+  const [key, setKey] = useState<string>('')
+  const [isFistTimeLoadApp, setIsFirstTimeLoadApp] = useState<boolean>(false)
+  const [isFistTimeLoadTab, setIsFirstTimeLoadTab] = useState<boolean>(false)
+
+  const handleOnFirstTimeLoadApp: any = (
+    tabId: string,
+    isFirstTimeLoadApp: boolean
+  ): void => {
+    setKey(tabId)
+    setIsFirstTimeLoadApp(isFirstTimeLoadApp)
+  }
+
+  const handleOnFirstTimeLoadTab: any = (
+    tabId: string,
+    isFirstTimeLoadTab: boolean
+  ): void => {
+    setKey(tabId)
+    setIsFirstTimeLoadTab(isFirstTimeLoadTab)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>key: {key}</h1>
+      <h2>Fist time load App: {isFistTimeLoadApp ? 'true' : 'false'}</h2>
+      <h2>Fist time load Tab: {isFistTimeLoadTab ? 'true' : 'false'}</h2>
+
+      <BrowserTabsEvent
+        handleOnFirstTimeLoadTab={handleOnFirstTimeLoadTab}
+        handleOnFirstTimeLoadApp={handleOnFirstTimeLoadApp}
+      />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
