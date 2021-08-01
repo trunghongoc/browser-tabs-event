@@ -63,7 +63,7 @@ const App = () => {
 }
 ```
 
-## Seting
+## Setting
 
 ```
 npm i -s browser-tabs-event

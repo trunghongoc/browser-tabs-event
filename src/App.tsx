@@ -1,5 +1,5 @@
 import { FC, useState } from 'react'
-import { BrowserTabsEvent } from './Main'
+import { BrowserTabsEvent } from './components/BrowserTabsEventTs'
 // import { BrowserTabsEventJs } from './Main'
 
 const App: FC = (): JSX.Element => {
