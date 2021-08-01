@@ -1,9 +1,12 @@
-# Detech Browser's Tab Events
+# Detect Browser's Tab Events
 
-You can subcribe windows tab event when it closed, or when all all tabs was closed
+You can subcribe windows tab event with the list bellow:
+
+- All tab was closed (equal the first time load app in current browser)
+- Firt time load tab
 
 ```tsx
-import { BrowserTabsEvent } from 'browser-tab-event'
+import { BrowserTabsEvent } from 'browser-tabs-event'
 
 const App: FC = (): JSX.Element => {
   // first time load app
@@ -31,5 +34,5 @@ const App: FC = (): JSX.Element => {
 ## Seting
 
 ```
-npm i -s browser-tab-event
+npm i -s browser-tabs-event
 ```
