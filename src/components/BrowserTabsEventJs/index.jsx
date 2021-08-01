@@ -118,5 +118,5 @@ export const BrowserTabsEventJs = ({
     return () => handleOnUnMount(initialTabKey)
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-  return <></>
+  return null
 }

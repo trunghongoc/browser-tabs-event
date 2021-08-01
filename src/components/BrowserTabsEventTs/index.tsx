@@ -16,7 +16,7 @@ enum KEYS {
   STORAGE_BTE_TAB_ID_LASTEST = 'STORAGE_BTE_TAB_ID_LASTEST'
 }
 
-export const BrowserTabsEvent: FC<IProps> = ({
+export const BrowserTabsEventTs: FC<IProps> = ({
   handleOnFirstTimeLoadApp = (
     tabId?: string,
     isFirstTime?: boolean
