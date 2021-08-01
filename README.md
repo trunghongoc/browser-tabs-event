@@ -1,9 +1,18 @@
 # Detect Browser's Tab Events
 
-You can subcribe windows tab event with the list bellow:
+You can subscribe window tabs event with following support functions:
 
-- All tab was closed (equal the first time load app in current browser)
-- Firt time load tab
+- `handleOnFirstTimeLoadApp`
+
+  - All tab was closed (or the first time load application in current browser)
+    - If you close all tabs, then access again, it's mean you are access at the first time
+
+- `handleOnFirstTimeLoadTab`
+
+  - First time load tab
+
+- `handleOnUnMountTab`
+  - Handle on a tab is closing
 
 TS way
 
@@ -67,5 +76,4 @@ const App = () => {
 
 ```
 npm i -s browser-tabs-event
-
 ```
