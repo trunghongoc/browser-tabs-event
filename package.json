@@ -1,9 +1,20 @@
 {
   "name": "browser-tabs-event",
-  "version": "0.1.0",
-  "private": false,
+  "author": "Trung Ho Ngoc",
+  "version": "0.1.1",
   "description": "You can subcribe windows tab event when it closed, the first time app loaded, the first time tab loaded, or when all all tabs was closed",
   "main": "./src/components/BrowserTabsEvent/index.tsx",
+  "repository": {
+    "type": "git",
+    "url" : "https://github.com/trunghongoc/browser-tabs-event"
+  },
+  "keywords": [
+    "react",
+    "tabs event",
+    "window tabs event",
+    "typescript",
+    "close tab"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",

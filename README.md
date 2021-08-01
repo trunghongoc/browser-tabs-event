@@ -3,7 +3,7 @@
 You can subcribe windows tab event when it closed, or when all all tabs was closed
 
 ```tsx
-import { BrowserTabsEvent } from './components/BrowserTabsEvent'
+import { BrowserTabsEvent } from 'browser-tab-event'
 
 const App: FC = (): JSX.Element => {
   // first time load app
