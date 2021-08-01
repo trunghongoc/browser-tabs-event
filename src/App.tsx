@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 import { BrowserTabsEvent } from './Main'
-import { BrowserTabsEventJs } from './Main'
+// import { BrowserTabsEventJs } from './Main'
 
 const App: FC = (): JSX.Element => {
   const [key, setKey] = useState<string>('')
@@ -29,7 +29,7 @@ const App: FC = (): JSX.Element => {
       <h2>Fist time load App: {isFistTimeLoadApp ? 'true' : 'false'}</h2>
       <h2>Fist time load Tab: {isFistTimeLoadTab ? 'true' : 'false'}</h2>
 
-      <BrowserTabsEventJs
+      <BrowserTabsEvent
         handleOnFirstTimeLoadTab={handleOnFirstTimeLoadTab}
         handleOnFirstTimeLoadApp={handleOnFirstTimeLoadApp}
       />

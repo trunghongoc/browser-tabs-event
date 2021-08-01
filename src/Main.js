@@ -1,4 +1,2 @@
-export { BrowserTabsEvent } from './components/BrowserTabsEvent'
-export { BrowserTabsEvent as BrowserTabsEventTs } from './components/BrowserTabsEvent'
-
+export { BrowserTabsEvent } from './components/BrowserTabsEventTs'
 export { BrowserTabsEventJs } from './components/BrowserTabsEventJs'
